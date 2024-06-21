@@ -1,14 +1,25 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    padding-top: 61px;
 }
 
 form {
+    font-size: 18px;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    animation: shadow-pulse 2s infinite;
+}
+@keyframes shadow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+    }
 }
 h1 {
     text-decoration: underline;
@@ -22,19 +33,23 @@ h1:hover {
     font-size:48px;
 }
 label {
+    padding-top: 2%;
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
 }
 
 input, select {
-    width: 100%;
+    width: 96%;
+    FONT-SIZE: 15PX;
     padding: 8px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #ccc;
+    border-radius:11px;
 }
-
+#internship {
+    width: 100%;
+}
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -47,8 +62,10 @@ input, select {
     }
 }
 button {
+    font-size: 16px;
     background-color: #4CAF50;
     color: white;
+    padding-top: 100px;
     padding: 10px 20px;
     border: none;
     animation: pulse 2s infinite ease-in-out;
