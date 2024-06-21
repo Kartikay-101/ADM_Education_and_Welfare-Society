@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=icon type="image/x-icon" href="img/logo.png" />
-    <title>ADM Education & Welfare Society</title>
+    <title>Internship Application Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Internship Application Form</h1>
-    <div class="button-container">    
     <form action="/submit-internship-application" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
@@ -25,9 +23,6 @@
 
         <label for="course">Course:</label>
         <input type="text" id="course" name="course" required>
-
-        <label for="roll_n">Roll Number:</label>
-        <input type="text" id="roll_n" name="roll_n" required>
 
         <label for="internship">Select Internship Opportunity:</label>
         <select id="internship" name="internship" required>
@@ -48,11 +43,7 @@
             <option value="ui-ux-designer">UI/UX Designer</option>
         </select>
 
-        <div class="center-container">
-            <button type="submit">Apply</button>
-        </div>
-        
+        <button type="submit">Apply</button>
     </form>
-</div>
 </body>
 </html>
