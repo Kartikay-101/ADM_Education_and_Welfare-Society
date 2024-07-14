@@ -4,10 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship Application Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- <h1>Internship Application Form</h1> -->  
+    
+    <!-- Begin HTML form -->
+    <form action="Application.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="fullname" placeholder="Full Name:" required> 
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="@gmail.com" required>
+
+        <label for="contact">Contact Number:</label>
+        <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required>
+
+        <label for="college">College Name:</label>
+        <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" placeholder="Enter your course" required>
+
+        <label for="internship">Select Internship Opportunity:</label>
+        <select id="internship" name="internship" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="graphic-designer">Graphic Designer</option>
+            <option value="video-editor">Video Editor</option>
+            <option value="content-writer">Content Writer</option>
+            <option value="anchoring">Anchoring</option>
+            <option value="human-resources">Human Resources</option>
+            <option value="marketing">Marketing</option>
+            <option value="medical-volunteer">Medical Volunteer</option>
+            <option value="public-relations">Public Relations</option>
+            <option value="campus-ambassador">Campus Ambassador</option>
+            <option value="csr">Corporate Social Responsibility (CSR)</option>
+            <option value="project-manager">Project Manager</option>
+            <option value="finance-manager">Finance Manager</option>
+            <option value="project-coordinator">Project Coordinator</option>
+            <option value="ui-ux-designer">UI/UX Designer</option>
+        </select>
+
+        <button type="submit" name="submit">Apply</button>
+    </form>
+    <!-- End HTML form -->
 
     <!-- Begin PHP code to insert data into the database -->
     <?php
@@ -55,7 +96,7 @@
             if ($prepareStmt) {
                 mysqli_stmt_bind_param($stmt, "ssssss", $fullName, $email, $contact, $college, $course, $internship);
                 mysqli_stmt_execute($stmt);
-                echo "<div class='alert alert-success'>Application submitted successfully!</div>";
+                echo "<div class='alert alert-success' style='text-align: center; display: flex; justify-content: center; align-items: center; height: 10%; margin-top: 20px;'>Application submitted successfully!</div>";
             }else{
                 die("Something went wrong");
             }
@@ -64,45 +105,6 @@
         ?>
     <!-- End PHP code to insert data into the database -->
         
-    <!-- Begin HTML form -->
-    <form action="Application.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="fullname" placeholder="Full Name:" required> 
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="@gmail.com" required>
-
-        <label for="contact">Contact Number:</label>
-        <input type="tel" id="contact" name="contact" placeholder="123-456-7890" required>
-
-        <label for="college">College Name:</label>
-        <input type="text" id="college" name="college" placeholder="Enter your college name" required>
-
-        <label for="course">Course:</label>
-        <input type="text" id="course" name="course" placeholder="Enter your course" required>
-
-        <label for="internship">Select Internship Opportunity:</label>
-        <select id="internship" name="internship" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="graphic-designer">Graphic Designer</option>
-            <option value="video-editor">Video Editor</option>
-            <option value="content-writer">Content Writer</option>
-            <option value="anchoring">Anchoring</option>
-            <option value="human-resources">Human Resources</option>
-            <option value="marketing">Marketing</option>
-            <option value="medical-volunteer">Medical Volunteer</option>
-            <option value="public-relations">Public Relations</option>
-            <option value="campus-ambassador">Campus Ambassador</option>
-            <option value="csr">Corporate Social Responsibility (CSR)</option>
-            <option value="project-manager">Project Manager</option>
-            <option value="finance-manager">Finance Manager</option>
-            <option value="project-coordinator">Project Coordinator</option>
-            <option value="ui-ux-designer">UI/UX Designer</option>
-        </select>
-
-        <button type="submit" name="submit">Apply</button>
-    </form>
-    <!-- End HTML form -->
     
 </body>
 </html>
